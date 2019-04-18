@@ -1,5 +1,5 @@
 // --- Directions
-// Check to see if two provided strings are anagrams of eachother.
+// Check to see if two provided strings are anagrams of each other.
 // One string is an anagram of another if it uses the same characters
 // in the same quantity. Only consider characters, not spaces
 // or punctuation.  Consider capital letters to be the same as lower case
@@ -8,6 +8,50 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+function anagrams(stringA, stringB) {
+}
+
+
 
 module.exports = anagrams;
+
+
+/*
+function anagrams(stringA, stringB) {
+    const stringASorted = stringA.split('').sort().join('').toLowerCase().replace(/[^\w]/g,''),
+          stringBSorted = stringB.split('').sort().join('').toLowerCase().replace(/[^\w]/g,'');
+    
+    return stringASorted === stringBSorted;
+}*/
+
+/*
+//solution 2
+function anagrams(stringA, stringB) {
+    const stringAMap = buildCharMap( stringA ),
+          stringBMap = buildCharMap( stringB );
+    
+    //if maps have same amount of properties
+    if ( Object.keys( stringAMap ).length === Object.keys( stringBMap ).length ) {
+        for ( key in stringAMap ) {
+            if ( !(Object.keys( stringBMap ).includes( key )) && stringBMap[ key ] !== stringAMap[ key ] ) {
+                return false;
+            }
+        }
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function buildCharMap( str ) {
+    const map = {};
+    for ( char of str.toLowerCase().replace(/[^\w]/g,'') ) {
+        if ( map[ char ] ) {
+            map[ char ]++;
+        } else {
+            map[ char ] = 1;
+        }
+    }
+    return map;
+};
+ */

@@ -8,6 +8,31 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
-function chunk(array, size) {}
+function chunk(array, size) {
+}
 
 module.exports = chunk;
+
+/* function chunk(array, size) {
+    //push into empty array
+    //create array in first slot
+    //if subarray.length is less than size, push
+    //else, create another subarray
+    
+    const chunked = [];
+    
+    
+    array.forEach( function( val, i ) {
+        
+        const lastChunk = chunked[ chunked.length - 1 ];
+        
+        if ( lastChunk && lastChunk.length < size ) {
+            lastChunk.push( val );
+        } else {
+            chunked.push( [ val ] );
+        }
+    } );
+    
+    return chunked;
+
+}*/

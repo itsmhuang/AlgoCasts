@@ -13,7 +13,50 @@
 //       '  #  '
 //       ' ### '
 //       '#####'
+//   pyramid(4)
+//       '   #   '
+//       '  ###  '
+//       ' ##### '
+//       '#######'
 
-function pyramid(n) {}
+function pyramid(n) {
+}
+
+console.log( pyramid(3) );
 
 module.exports = pyramid;
+
+/* function pyramid(n) {
+    
+    for ( let row = 1; row <= n; row++ ) {
+        let pyramid = '';
+        for ( let col = 1; col <= (n+n-1); col++ ) {
+            if ( ( row + col ) > n && ( col - row ) < n ) {
+                pyramid += '#';
+            } else {
+                pyramid += ' ';
+            }
+        }
+        console.log( pyramid );
+    }
+} */
+
+
+/*
+function pyramid(n) {
+    
+    const midpoint = Math.floor( (2*n-1) /2 );
+    
+    for ( let row = 0; row < n; row++ ) {
+        let pyramid = '';
+        for ( let col = 0; col < (n+n-1); col++ ) {
+            if ( midpoint - row <= col && midpoint + row >= col ) {
+                pyramid += '#';
+            } else {
+                pyramid += ' ';
+            }
+        }
+        console.log( pyramid );
+    }
+}
+ */

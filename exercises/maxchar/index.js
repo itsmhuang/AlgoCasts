@@ -27,4 +27,24 @@ function maxChar(str) {
     }
     
     return greatestChar;
-}*/
+}
+
+//slightly more performant than for in?
+function maxChar(str) {
+    let charMap = new Map();
+    let greatestChar = '';
+    let greatestNum = 0;
+    
+    for (let char of str) {
+        charMap.set(char, charMap.get(char)? charMap.get(char)+1 : 1);
+    }
+    
+    for (let [key, value] of charMap) {
+        if (value > greatestNum) {
+            greatestChar = key;
+            greatestNum = value;
+        }
+    }
+    return greatestChar;
+}
+*/

@@ -55,3 +55,28 @@ function buildCharMap( str ) {
     return map;
 };
  */
+
+/*
+//solution 3 with maps
+function anagrams(stringA, stringB) {
+    const noSpaceStringA = stringA.toLowerCase().replace(/[^\w]/g,'');
+    const noSpaceStringB = stringB.toLowerCase().replace(/[^\w]/g,'');
+    
+    const mapA = new Map();
+    const mapB = new Map();
+    
+    for (let char of stringA) {
+        mapA.set(char, mapA.get(char) ? mapA.get(char) +1: 1);
+    }
+    for (let char of stringB) {
+        mapB.set(char, mapB.get(char) ? mapB.get(char) +1: 1);
+    }
+    
+    for (let [key, value] of mapA) {
+        if (mapB.get(key) && mapB.get(key) !== value) {
+            return false;
+        }
+    }
+    return true;
+    
+}*/

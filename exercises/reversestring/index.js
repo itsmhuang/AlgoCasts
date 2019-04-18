@@ -44,4 +44,16 @@ function reverse(str) {
     return str.split('').reduce( (reversed, char) => {
         return char + reversed;
     }, '');
-}*/
+}
+
+//solution 5 with map
+function reverse(str) {
+    let reversed = [];
+    str.split('').map((e,i,arr)=>reversed.push(arr[arr.length-1-i]));
+    return reversed.join('');
+}
+
+*/
+
+
+

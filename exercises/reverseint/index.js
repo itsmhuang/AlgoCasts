@@ -23,4 +23,18 @@ function reverseInt(n) {
     
     return parseInt( positiveNum.toString().split('').reverse().join('') ) * sign;
     
-}*/
+}
+
+//more performant
+function reverseInt(n) {
+    let nStr = n.toString();
+    let reversed = '';
+    
+    for (let digit of nStr) {
+        reversed = digit + reversed;
+    }
+    
+    return parseInt(reversed) * Math.sign(n);
+}
+
+*/

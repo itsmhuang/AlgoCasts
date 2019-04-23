@@ -8,6 +8,8 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
+//replace(/[^\w]/g,'')
+
 function anagrams(stringA, stringB) {
 }
 
@@ -59,23 +61,31 @@ function buildCharMap( str ) {
 /*
 //solution 3 with maps
 function anagrams(stringA, stringB) {
-    const noSpaceStringA = stringA.toLowerCase().replace(/[^\w]/g,'');
-    const noSpaceStringB = stringB.toLowerCase().replace(/[^\w]/g,'');
+    const normalA = stringA.replace(/[^\w]/g,'').toLowerCase();
+    const normalB = stringB.replace(/[^\w]/g,'').toLowerCase();
     
     const mapA = new Map();
     const mapB = new Map();
     
     for (let char of stringA) {
-        mapA.set(char, mapA.get(char) ? mapA.get(char) +1: 1);
+        mapA.set(char, mapA.get(char)? mapA.get(char)+1: 1);
     }
     for (let char of stringB) {
-        mapB.set(char, mapB.get(char) ? mapB.get(char) +1: 1);
+        mapB.set(char, mapB.get(char)? mapB.get(char)+1: 1);
     }
     
-    for (let [key, value] of mapA) {
-        if (mapB.get(key) && mapB.get(key) !== value) {
+    for (let [key,val] of mapB) {
+        
+        
+        if (mapA.get(key)) {
+            if (mapA.get(key) !== val) {
+                return false;
+            }
+            
+        } else {
             return false;
         }
+        
     }
     return true;
     

@@ -61,32 +61,35 @@ function buildCharMap( str ) {
 /*
 //solution 3 with maps
 function anagrams(stringA, stringB) {
-    const normalA = stringA.replace(/[^\w]/g,'').toLowerCase();
-    const normalB = stringB.replace(/[^\w]/g,'').toLowerCase();
+    const normalA = stringA.replace(/[^\w]/g,'');
+    const normalB = stringB.replace(/[^\w]/g,'');
     
     const mapA = new Map();
     const mapB = new Map();
     
-    for (let char of stringA) {
-        mapA.set(char, mapA.get(char)? mapA.get(char)+1: 1);
+    for (let char of normalA) {
+        mapA.set(char, mapA.get(char) ? mapA.get(char)+1: 1);
     }
-    for (let char of stringB) {
-        mapB.set(char, mapB.get(char)? mapB.get(char)+1: 1);
+    for (let char of normalB) {
+        mapB.set(char, mapB.get(char) ? mapB.get(char)+1: 1);
     }
     
-    for (let [key,val] of mapB) {
-        
-        
-        if (mapA.get(key)) {
-            if (mapA.get(key) !== val) {
+    if (mapB.size === mapA.size) {
+        for (let [key, val] of mapA) {
+            if (mapB.get(key)) {
+                if (mapB.get(key) !== val) {
+                    return false;
+                }
+                
+            } else {
                 return false;
             }
-            
-        } else {
-            return false;
         }
-        
+    } else {
+        return false;
     }
+    
     return true;
+    
     
 }*/
